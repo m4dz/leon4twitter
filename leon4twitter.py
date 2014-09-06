@@ -37,3 +37,4 @@ for id, l in logs.iteritems():
             log.write(("[%s](%s) %s\r\n" % (time.strftime("%Y-%m-%d %H:%M", time.localtime(dm.created_at_in_seconds)),
                                             dm.sender_screen_name,
                                             dm.text)).encode('utf-8'))
+            api.DestroyDirectMessage(dm.id)
